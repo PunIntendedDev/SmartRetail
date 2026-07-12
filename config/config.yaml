@@ -1,0 +1,67 @@
+# Configuration settings for Smart Retail Intelligence Platform
+
+paths:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  models_dir: "models"
+  figures_dir: "outputs/figures"
+  category_map_path: "category_map.json"
+
+data_split:
+  train_size: 0.8
+  val_size: 0.1
+  test_size: 0.1
+  random_state: 42
+
+preprocess:
+  # Feature Window: Months 1-9 (2010-12-01 to 2011-08-31)
+  feature_window_end: "2011-08-31"
+  # Target Window: Months 10-12 (2011-09-01 to 2011-12-09)
+  target_window_start: "2011-09-01"
+  high_value_percentile: 80 # Top 20% (80th percentile)
+
+pca:
+  min_variance_ratio: 0.90
+
+classification:
+  cv_folds: 5
+  mlp_hidden_layers: [32, 16]
+  logistic_regression_grid:
+    C: [0.01, 0.1, 1.0, 10.0]
+    penalty: ["l2"]
+    solver: ["lbfgs"]
+
+regression:
+  mlp_hidden_layers: [32, 16]
+
+reinforcement_learning:
+  state_clusters: 8
+  actions:
+    0: "No Action"
+    1: "10% Discount Coupon"
+    2: "Free Premium Trial"
+  costs:
+    0: 0.0
+    1: 1.0
+    2: 5.0
+  adjustments:
+    0: 0.30
+    1: 0.55
+    2: 0.75
+  tabular_q:
+    alpha: 0.1
+    gamma: 0.9
+    epsilon_start: 1.0
+    epsilon_decay: 0.995
+    epsilon_min: 0.05
+    episodes: 500
+  dqn:
+    episodes: 300
+    buffer_size: 2000
+    batch_size: 64
+    gamma: 0.9
+    learning_rate: 0.001
+    target_update_frequency: 20
+    epsilon_start: 1.0
+    epsilon_decay: 0.99
+    epsilon_min: 0.05

@@ -1,0 +1,162 @@
+"""
+Reinforcement Learning Training Pipeline
+----------------------------------------
+Trains the K-Means state discretizer, the Tabular Q-learning agent, and the PyTorch
+DQN agent on the processed training split. Saves metrics and outputs the combined
+learning curves plot to outputs/figures/rl_reward_learning_curve.png.
+"""
+
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+import torch
+
+from src.config import get_absolute_path, config_data
+from src.environment import RetailCustomerEnv
+from src.rl_agents import StateDiscretizer, QLearningAgent, DQNAgent
+from utils.logging_utils import get_logger
+
+logger = get_logger(__name__)
+
+def train_reinforcement_learning() -> None:
+    """
+    Executes the RL training pipeline:
+    - Prepares the training customer recommendation environment.
+    - Fits and serializes KMeans discretizer.
+    - Pre-discretizes all states to speed up Q-learning.
+    - Trains Q-learning agent for 500 episodes.
+    - Trains DQN agent for 300 episodes with optimized updates.
+    - Plots reward history comparisons.
+    """
+    # 1. Initialize environment
+    logger.info("Initializing training environment...")
+    env = RetailCustomerEnv(split="train")
+    
+    # 2. Fit and save K-Means discretizer
+    discretizer = StateDiscretizer(n_clusters=8, random_state=42)
+    discretizer.fit(env.states)
+    
+    # Pre-discretize all states for the training set to prevent slow KMeans lookups inside loops
+    logger.info("Pre-discretizing all customer states for speed optimization...")
+    train_state_indices = discretizer.kmeans.predict(env.states)
+    
+    # 3. Train Tabular Q-Learning Agent
+    rl_config = config_data["reinforcement_learning"]
+    q_params = rl_config["tabular_q"]
+    
+    logger.info("Initializing Tabular Q-learning agent...")
+    q_agent = QLearningAgent(
+        state_size=8,
+        action_size=3,
+        alpha=float(q_params["alpha"]),
+        gamma=float(q_params["gamma"]),
+        epsilon=float(q_params["epsilon_start"]),
+        epsilon_decay=float(q_params["epsilon_decay"]),
+        epsilon_min=float(q_params["epsilon_min"])
+    )
+    
+    q_episodes = int(q_params["episodes"])
+    q_rewards = []
+    
+    logger.info(f"Training Tabular Q-learning agent for {q_episodes} episodes...")
+    for ep in range(1, q_episodes + 1):
+        env.reset()
+        total_reward = 0.0
+        
+        # Single epoch pass over training customers
+        for idx in range(env.num_customers):
+            state_idx = train_state_indices[idx]
+            action = q_agent.get_action(state_idx, train=True)
+            next_state, reward, done, info = env.step(action)
+            
+            # Next state index is known statically from index + 1
+            next_state_idx = 0 if done else train_state_indices[idx + 1]
+            
+            q_agent.update(state_idx, action, reward, next_state_idx)
+            total_reward += reward
+            
+        q_agent.decay_epsilon()
+        q_rewards.append(total_reward)
+        
+        if ep % 50 == 0 or ep == 1:
+            logger.info(f"  Episode {ep:3d}/{q_episodes} | Total Reward: {total_reward:10.2f} | Epsilon: {q_agent.epsilon:.3f}")
+            
+    q_agent.save()
+    
+    # 4. Train Deep Q-Network (DQN) Agent
+    dqn_params = rl_config["dqn"]
+    
+    logger.info("Initializing PyTorch DQN agent...")
+    dqn_agent = DQNAgent(
+        state_size=5,
+        action_size=3,
+        lr=float(dqn_params["learning_rate"]),
+        gamma=float(dqn_params["gamma"]),
+        epsilon=float(dqn_params["epsilon_start"]),
+        epsilon_decay=float(dqn_params["epsilon_decay"]),
+        epsilon_min=float(dqn_params["epsilon_min"]),
+        buffer_size=int(dqn_params["buffer_size"]),
+        batch_size=int(dqn_params["batch_size"])
+    )
+    
+    dqn_episodes = int(dqn_params["episodes"])
+    target_update_frequency = int(dqn_params["target_update_frequency"])
+    dqn_rewards = []
+    
+    logger.info(f"Training PyTorch DQN agent for {dqn_episodes} episodes...")
+    for ep in range(1, dqn_episodes + 1):
+        state = env.reset()
+        total_reward = 0.0
+        done = False
+        step_count = 0
+        
+        while not done:
+            action = dqn_agent.get_action(state, train=True)
+            next_state, reward, done, info = env.step(action)
+            
+            # Store transition in replay buffer
+            dqn_agent.memory.push(state, action, reward, next_state, done)
+            
+            state = next_state
+            total_reward += reward
+            step_count += 1
+            
+            # Perform optimization step once every 16 steps to avoid CPU training bottleneck
+            if step_count % 16 == 0:
+                dqn_agent.update()
+            
+        dqn_agent.decay_epsilon()
+        dqn_rewards.append(total_reward)
+        
+        # Periodic Target Network Updates
+        if ep % target_update_frequency == 0:
+            dqn_agent.update_target_network()
+            
+        if ep % 50 == 0 or ep == 1:
+            logger.info(f"  Episode {ep:3d}/{dqn_episodes} | Total Reward: {total_reward:10.2f} | Epsilon: {dqn_agent.epsilon:.3f}")
+            
+    dqn_agent.save()
+    
+    # 5. Generate and save learning curve plot
+    logger.info("Plotting reward learning curves...")
+    figures_dir = get_absolute_path("figures_dir")
+    os.makedirs(figures_dir, exist_ok=True)
+    
+    plt.figure(figsize=(10, 5))
+    plt.plot(range(1, q_episodes + 1), q_rewards, label="Tabular Q-Learning", color="#10b981", alpha=0.8)
+    plt.plot(range(1, dqn_episodes + 1), dqn_rewards, label="Deep Q-Network (DQN)", color="#2563eb", alpha=0.8)
+    plt.xlabel("Episodes")
+    plt.ylabel("Total Episode Reward")
+    plt.title("Reinforcement Learning Reward Learning Curves")
+    plt.legend()
+    plt.grid(True, linestyle="--", alpha=0.5)
+    
+    curve_path = os.path.join(figures_dir, "rl_reward_learning_curve.png")
+    plt.savefig(curve_path, dpi=300, bbox_inches="tight")
+    plt.close()
+    
+    logger.info(f"Learning curve successfully saved to: {curve_path}")
+    logger.info("Reinforcement Learning training pipeline completed successfully.")
+
+if __name__ == "__main__":
+    train_reinforcement_learning()

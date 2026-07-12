@@ -1,0 +1,7 @@
+{
+    "snapshot_date": "2011-08-31 17:23:00",
+    "high_value_threshold": 1629.3980000000001,
+    "train_customers_count": 2649,
+    "val_customers_count": 331,
+    "test_customers_count": 332
+}

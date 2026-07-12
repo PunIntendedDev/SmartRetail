@@ -1,0 +1,20 @@
+{
+    "validation_comparisons": {
+        "Linear_Regression": {
+            "mse": 86432964.92917526,
+            "rmse": 9296.933092648094,
+            "r2_score": -0.0022144067875269347
+        },
+        "MLP_Regressor": {
+            "mse": 86051943.7510789,
+            "rmse": 9276.418692096584,
+            "r2_score": 0.0022036403579369646
+        }
+    },
+    "best_model_selected": "MLPRegressor",
+    "test_evaluation": {
+        "mse": 13307866.378947284,
+        "rmse": 3647.994843602069,
+        "r2_score": 0.6592855822603949
+    }
+}

@@ -1,0 +1,303 @@
+2026-07-11 20:04:03 - __main__ - INFO - Attempting to download Online Retail Dataset from: https://archive.ics.uci.edu/ml/machine-learning-databases/00352/Online%20Retail.xlsx
+2026-07-11 20:04:37 - __main__ - INFO - Successfully downloaded and saved dataset to: C:\Users\PMLS\Desktop\SmartRetail\data\raw\Online Retail.xlsx
+2026-07-11 20:05:14 - __main__ - INFO - Loading raw Excel file (first-time setup): C:\Users\PMLS\Desktop\SmartRetail\data\raw\Online Retail.xlsx
+2026-07-11 20:06:38 - __main__ - INFO - Saving converted transaction CSV for future fast loads to: C:\Users\PMLS\Desktop\SmartRetail\data\raw\online_retail.csv
+2026-07-11 20:06:47 - __main__ - INFO - Cleaned transactional data. Shape reduced from (541909, 8) to (397884, 9).
+2026-07-11 20:06:47 - __main__ - INFO - Transactions in Feature Window (Months 1-9): 225712
+2026-07-11 20:06:47 - __main__ - INFO - Transactions in Target Window (Months 10-12): 171417
+2026-07-11 20:06:47 - __main__ - INFO - Feature Window Snapshot Date: 2011-08-31 17:23:00
+2026-07-11 20:06:47 - __main__ - INFO - Computing customer-level features on the Feature Window...
+2026-07-11 20:06:48 - __main__ - INFO - Categorizing descriptions for category spend analysis...
+2026-07-11 20:06:51 - __main__ - INFO - Computing target future spend variable (Months 10-12)...
+2026-07-11 20:06:51 - __main__ - INFO - Splits generated: Train=2649, Val=331, Test=332
+2026-07-11 20:06:51 - __main__ - INFO - High-Value threshold (80th percentile of Monetary on Train): $1635.28
+2026-07-11 20:06:51 - __main__ - INFO - Generating description-to-category associations in category_map.json...
+2026-07-11 20:06:51 - __main__ - INFO - Category map saved to: C:\Users\PMLS\Desktop\SmartRetail\category_map.json
+2026-07-11 20:06:51 - __main__ - INFO - Processed datasets saved under data/processed/.
+2026-07-11 20:06:51 - __main__ - INFO - Metadata saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\metadata.json
+2026-07-11 20:07:33 - __main__ - INFO - Loading raw transaction CSV from: C:\Users\PMLS\Desktop\SmartRetail\data\raw\online_retail.csv
+2026-07-11 20:07:35 - __main__ - INFO - Cleaned transactional data. Shape reduced from (541909, 8) to (397884, 9).
+2026-07-11 20:07:35 - __main__ - INFO - Transactions in Feature Window (Months 1-9): 225712
+2026-07-11 20:07:35 - __main__ - INFO - Transactions in Target Window (Months 10-12): 171417
+2026-07-11 20:07:35 - __main__ - INFO - Feature Window Snapshot Date: 2011-08-31 17:23:00
+2026-07-11 20:07:35 - __main__ - INFO - Computing customer-level features on the Feature Window...
+2026-07-11 20:07:35 - __main__ - INFO - Categorizing descriptions for category spend analysis...
+2026-07-11 20:07:37 - __main__ - INFO - Computing target future spend variable (Months 10-12)...
+2026-07-11 20:07:37 - __main__ - INFO - Splits generated: Train=2649, Val=331, Test=332
+2026-07-11 20:07:37 - __main__ - INFO - High-Value threshold (80th percentile of Monetary on Train): $1635.28
+2026-07-11 20:07:37 - __main__ - INFO - Generating description-to-category associations in category_map.json...
+2026-07-11 20:07:37 - __main__ - INFO - Category map saved to: C:\Users\PMLS\Desktop\SmartRetail\category_map.json
+2026-07-11 20:07:37 - __main__ - INFO - Processed datasets saved under data/processed/.
+2026-07-11 20:07:37 - __main__ - INFO - Metadata saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\metadata.json
+2026-07-11 20:07:37 - __main__ - INFO - Generating preprocessing figures...
+2026-07-11 20:08:19 - __main__ - INFO - Loading raw transaction CSV from: C:\Users\PMLS\Desktop\SmartRetail\data\raw\online_retail.csv
+2026-07-11 20:08:20 - __main__ - INFO - Cleaned transactional data. Shape reduced from (541909, 8) to (397884, 9).
+2026-07-11 20:08:20 - __main__ - INFO - Transactions in Feature Window (Months 1-9): 225712
+2026-07-11 20:08:20 - __main__ - INFO - Transactions in Target Window (Months 10-12): 171417
+2026-07-11 20:08:20 - __main__ - INFO - Feature Window Snapshot Date: 2011-08-31 17:23:00
+2026-07-11 20:08:20 - __main__ - INFO - Computing customer-level features on the Feature Window...
+2026-07-11 20:08:20 - __main__ - INFO - Categorizing descriptions for category spend analysis...
+2026-07-11 20:08:22 - __main__ - INFO - Computing target future spend variable (Months 10-12)...
+2026-07-11 20:08:22 - __main__ - INFO - Splits generated: Train=2649, Val=331, Test=332
+2026-07-11 20:08:22 - __main__ - INFO - High-Value threshold (80th percentile of Monetary on Train): $1635.28
+2026-07-11 20:08:22 - __main__ - INFO - Generating description-to-category associations in category_map.json...
+2026-07-11 20:08:22 - __main__ - INFO - Category map saved to: C:\Users\PMLS\Desktop\SmartRetail\category_map.json
+2026-07-11 20:08:22 - __main__ - INFO - Processed datasets saved under data/processed/.
+2026-07-11 20:08:22 - __main__ - INFO - Metadata saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\metadata.json
+2026-07-11 20:08:22 - __main__ - INFO - Generating preprocessing figures...
+2026-07-11 20:08:43 - __main__ - INFO - Loading raw transaction CSV from: C:\Users\PMLS\Desktop\SmartRetail\data\raw\online_retail.csv
+2026-07-11 20:08:45 - __main__ - INFO - Cleaned transactional data. Shape reduced from (541909, 8) to (397884, 9).
+2026-07-11 20:08:45 - __main__ - INFO - Transactions in Feature Window (Months 1-9): 225712
+2026-07-11 20:08:45 - __main__ - INFO - Transactions in Target Window (Months 10-12): 171417
+2026-07-11 20:08:45 - __main__ - INFO - Feature Window Snapshot Date: 2011-08-31 17:23:00
+2026-07-11 20:08:45 - __main__ - INFO - Computing customer-level features on the Feature Window...
+2026-07-11 20:08:45 - __main__ - INFO - Categorizing descriptions for category spend analysis...
+2026-07-11 20:08:47 - __main__ - INFO - Computing target future spend variable (Months 10-12)...
+2026-07-11 20:08:47 - __main__ - INFO - Splits generated: Train=2649, Val=331, Test=332
+2026-07-11 20:08:47 - __main__ - INFO - High-Value threshold (80th percentile of Monetary on Train): $1635.28
+2026-07-11 20:08:47 - __main__ - INFO - Generating description-to-category associations in category_map.json...
+2026-07-11 20:08:47 - __main__ - INFO - Category map saved to: C:\Users\PMLS\Desktop\SmartRetail\category_map.json
+2026-07-11 20:08:47 - __main__ - INFO - Processed datasets saved under data/processed/.
+2026-07-11 20:08:47 - __main__ - INFO - Metadata saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\metadata.json
+2026-07-11 20:08:47 - __main__ - INFO - Generating preprocessing figures...
+2026-07-11 20:08:55 - __main__ - INFO - Preprocessing figures successfully saved under outputs/figures/.
+2026-07-12 00:28:39 - __main__ - INFO - Loading raw transaction CSV from: C:\Users\PMLS\Desktop\SmartRetail\data\raw\online_retail.csv
+2026-07-12 00:28:41 - __main__ - INFO - Starting raw transaction data cleaning process...
+2026-07-12 00:28:41 - __main__ - INFO - Initial record count: 541,909
+2026-07-12 00:28:42 - __main__ - INFO - Duplicate removal: 541,909 -> 536,641 (Removed 5,268 duplicate rows)
+2026-07-12 00:28:42 - __main__ - INFO - Missing CustomerID removal: 536,641 -> 401,604 (Removed 135,037 rows)
+2026-07-12 00:28:43 - __main__ - INFO - Cancelled invoices removal (InvoiceNo starts with 'C'): 401,604 -> 392,732 (Removed 8,872 rows)
+2026-07-12 00:28:43 - __main__ - INFO - Non-positive Quantity removal: 392,732 -> 392,732 (Removed 0 rows)
+2026-07-12 00:28:43 - __main__ - INFO - Non-positive UnitPrice removal: 392,732 -> 392,692 (Removed 40 rows)
+2026-07-12 00:28:43 - __main__ - INFO - Completed cleaning process. Final cleaned records: 392,692
+2026-07-12 00:28:43 - __main__ - INFO - Transactions in Feature Window (Months 1-9): 223,286
+2026-07-12 00:28:43 - __main__ - INFO - Transactions in Target Window (Months 10-12): 168,656
+2026-07-12 00:28:43 - __main__ - INFO - Feature Window Snapshot Date: 2011-08-31 17:23:00
+2026-07-12 00:28:43 - __main__ - INFO - Computing customer-level features on the Feature Window (Months 1-9)...
+2026-07-12 00:28:43 - __main__ - INFO - Categorizing product descriptions...
+2026-07-12 00:28:46 - __main__ - INFO - Computing target variable 'Future_Spend' from Target Window (Months 10-12)...
+2026-07-12 00:28:46 - __main__ - INFO - Splits determined: Train=2649, Val=331, Test=332
+2026-07-12 00:28:46 - __main__ - INFO - High-Value threshold (80th percentile of Monetary on Train): $1629.40
+2026-07-12 00:28:46 - __main__ - INFO - Generating description-to-category mapping for category_map.json...
+2026-07-12 00:28:46 - __main__ - INFO - Category map saved to: C:\Users\PMLS\Desktop\SmartRetail\category_map.json
+2026-07-12 00:28:46 - __main__ - INFO - Processed split datasets saved under data/processed/.
+2026-07-12 00:28:46 - __main__ - INFO - Split customer IDs saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\customer_splits.json
+2026-07-12 00:28:46 - __main__ - INFO - Metadata saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\metadata.json
+2026-07-12 00:28:46 - __main__ - INFO - Generating preprocessing figures...
+2026-07-12 00:28:56 - __main__ - INFO - Preprocessing figures successfully saved under outputs/figures/.
+2026-07-12 00:29:45 - __main__ - INFO - Dataset already exists locally at: C:\Users\PMLS\Desktop\SmartRetail\data\raw\Online Retail.xlsx. Skipping download.
+2026-07-12 00:30:34 - __main__ - INFO - Loading raw transaction CSV from: C:\Users\PMLS\Desktop\SmartRetail\data\raw\online_retail.csv
+2026-07-12 00:30:36 - __main__ - INFO - Starting raw transaction data cleaning process...
+2026-07-12 00:30:36 - __main__ - INFO - Initial record count: 541,909
+2026-07-12 00:30:36 - __main__ - INFO - Duplicate removal: 541,909 -> 536,641 (Removed 5,268 duplicate rows)
+2026-07-12 00:30:36 - __main__ - INFO - Missing CustomerID removal: 536,641 -> 401,604 (Removed 135,037 rows)
+2026-07-12 00:30:37 - __main__ - INFO - Cancelled invoices removal (InvoiceNo starts with 'C'): 401,604 -> 392,732 (Removed 8,872 rows)
+2026-07-12 00:30:37 - __main__ - INFO - Non-positive Quantity removal: 392,732 -> 392,732 (Removed 0 rows)
+2026-07-12 00:30:37 - __main__ - INFO - Non-positive UnitPrice removal: 392,732 -> 392,692 (Removed 40 rows)
+2026-07-12 00:30:37 - __main__ - INFO - Completed cleaning process. Final cleaned records: 392,692
+2026-07-12 00:30:37 - __main__ - INFO - Transactions in Feature Window (Months 1-9): 223,286
+2026-07-12 00:30:37 - __main__ - INFO - Transactions in Target Window (Months 10-12): 168,656
+2026-07-12 00:30:37 - __main__ - INFO - Feature Window Snapshot Date: 2011-08-31 17:23:00
+2026-07-12 00:30:37 - __main__ - INFO - Computing customer-level features on the Feature Window (Months 1-9)...
+2026-07-12 00:30:37 - __main__ - INFO - Categorizing product descriptions...
+2026-07-12 00:30:39 - __main__ - INFO - Computing target variable 'Future_Spend' from Target Window (Months 10-12)...
+2026-07-12 00:30:39 - __main__ - INFO - Splits determined: Train=2649, Val=331, Test=332
+2026-07-12 00:30:39 - __main__ - INFO - High-Value threshold (80th percentile of Monetary on Train): $1629.40
+2026-07-12 00:30:39 - __main__ - INFO - Generating description-to-category mapping for category_map.json...
+2026-07-12 00:30:39 - __main__ - INFO - Category map saved to: C:\Users\PMLS\Desktop\SmartRetail\category_map.json
+2026-07-12 00:30:39 - __main__ - INFO - Processed split datasets saved under data/processed/.
+2026-07-12 00:30:39 - __main__ - INFO - Split customer IDs saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\customer_splits.json
+2026-07-12 00:30:39 - __main__ - INFO - Metadata saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\metadata.json
+2026-07-12 00:30:39 - __main__ - INFO - Generating preprocessing figures...
+2026-07-12 00:30:54 - __main__ - INFO - Preprocessing figures successfully saved under outputs/figures/.
+2026-07-12 00:35:17 - __main__ - INFO - Loading preprocessed customer datasets...
+2026-07-12 00:35:37 - __main__ - INFO - Loading preprocessed customer datasets...
+2026-07-12 00:35:37 - __main__ - INFO - Selected category spend features for PCA (excluding 'Other_Spend_Pct'): ['Homeware_Spend_Pct', 'Stationery_Spend_Pct', 'Gadgets_Spend_Pct', 'Decorations_Spend_Pct', 'Kitchenware_Spend_Pct']
+2026-07-12 00:35:37 - __main__ - INFO - Fitting StandardScaler on raw training features...
+2026-07-12 00:35:37 - __main__ - INFO - Raw features scaler saved to: C:\Users\PMLS\Desktop\SmartRetail\models\scaler.joblib
+2026-07-12 00:35:37 - __main__ - INFO - Saved Raw Standardized feature sets.
+2026-07-12 00:35:37 - __main__ - INFO - Running PCA pipeline on category spend percentages...
+2026-07-12 00:35:37 - __main__ - INFO - PCA Cumulative Variance Explained: [0.2586416  0.49015064 0.72070534 0.93260604 1.        ]
+2026-07-12 00:35:37 - __main__ - INFO - Selected components to explain >= 90.0% variance: 4
+2026-07-12 00:35:37 - __main__ - INFO - Saved PCA-transformed feature sets.
+2026-07-12 00:35:37 - __main__ - INFO - Fitting LDA strictly on training scaled raw features...
+2026-07-12 00:35:37 - __main__ - INFO - LDA Discriminant Coefficients (sorted by absolute contribution):
+2026-07-12 00:35:37 - __main__ - INFO -   ProductDiversity: 1.1471
+2026-07-12 00:35:37 - __main__ - INFO -   AverageSpend: 0.8780
+2026-07-12 00:35:37 - __main__ - INFO -   Recency: -0.7460
+2026-07-12 00:35:37 - __main__ - INFO -   AverageQuantityPerOrder: 0.5863
+2026-07-12 00:35:37 - __main__ - INFO -   Frequency: 0.5589
+2026-07-12 00:35:37 - __main__ - INFO -   TotalOrders: 0.5589
+2026-07-12 00:35:37 - __main__ - INFO -   Monetary: -0.4183
+2026-07-12 00:35:37 - __main__ - INFO -   AverageBasketSize: -0.2812
+2026-07-12 00:35:37 - __main__ - INFO -   Stationery_Spend_Pct: -0.2071
+2026-07-12 00:35:37 - __main__ - INFO -   Decorations_Spend_Pct: -0.1600
+2026-07-12 00:35:37 - __main__ - INFO -   Gadgets_Spend_Pct: -0.1199
+2026-07-12 00:35:37 - __main__ - INFO -   Homeware_Spend_Pct: -0.0142
+2026-07-12 00:35:37 - __main__ - INFO -   Kitchenware_Spend_Pct: -0.0048
+2026-07-12 00:35:37 - __main__ - INFO - Saved LDA-projected feature sets.
+2026-07-12 00:35:37 - __main__ - INFO - PCA & LDA metadata saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\pca_metadata.json
+2026-07-12 00:35:37 - __main__ - INFO - Generating dimensionality reduction plots...
+2026-07-12 00:35:41 - __main__ - INFO - Figures successfully generated and saved under outputs/figures/.
+2026-07-12 00:37:06 - __main__ - INFO - Loading preprocessed customer datasets...
+2026-07-12 00:37:06 - __main__ - INFO - Selected category spend features for PCA (excluding 'Other_Spend_Pct'): ['Homeware_Spend_Pct', 'Stationery_Spend_Pct', 'Gadgets_Spend_Pct', 'Decorations_Spend_Pct', 'Kitchenware_Spend_Pct']
+2026-07-12 00:37:06 - __main__ - INFO - Fitting StandardScaler on raw training features...
+2026-07-12 00:37:06 - __main__ - INFO - Raw features scaler saved to: C:\Users\PMLS\Desktop\SmartRetail\models\scaler.joblib
+2026-07-12 00:37:06 - __main__ - INFO - Saved Raw Standardized feature sets.
+2026-07-12 00:37:06 - __main__ - INFO - Running PCA pipeline on category spend percentages...
+2026-07-12 00:37:06 - __main__ - INFO - PCA Cumulative Variance Explained: [0.2586416  0.49015064 0.72070534 0.93260604 1.        ]
+2026-07-12 00:37:06 - __main__ - INFO - Selected components to explain >= 90.0% variance: 4
+2026-07-12 00:37:06 - __main__ - INFO - Saved PCA-transformed feature sets.
+2026-07-12 00:37:06 - __main__ - INFO - Fitting LDA strictly on training scaled raw features...
+2026-07-12 00:37:06 - __main__ - INFO - LDA Discriminant Coefficients (sorted by absolute contribution):
+2026-07-12 00:37:06 - __main__ - INFO -   ProductDiversity: 1.1471
+2026-07-12 00:37:06 - __main__ - INFO -   AverageSpend: 0.8780
+2026-07-12 00:37:06 - __main__ - INFO -   Recency: -0.7460
+2026-07-12 00:37:06 - __main__ - INFO -   AverageQuantityPerOrder: 0.5863
+2026-07-12 00:37:06 - __main__ - INFO -   Frequency: 0.5589
+2026-07-12 00:37:06 - __main__ - INFO -   TotalOrders: 0.5589
+2026-07-12 00:37:06 - __main__ - INFO -   Monetary: -0.4183
+2026-07-12 00:37:06 - __main__ - INFO -   AverageBasketSize: -0.2812
+2026-07-12 00:37:06 - __main__ - INFO -   Stationery_Spend_Pct: -0.2071
+2026-07-12 00:37:06 - __main__ - INFO -   Decorations_Spend_Pct: -0.1600
+2026-07-12 00:37:06 - __main__ - INFO -   Gadgets_Spend_Pct: -0.1199
+2026-07-12 00:37:06 - __main__ - INFO -   Homeware_Spend_Pct: -0.0142
+2026-07-12 00:37:06 - __main__ - INFO -   Kitchenware_Spend_Pct: -0.0048
+2026-07-12 00:37:06 - __main__ - INFO - Saved LDA-projected feature sets.
+2026-07-12 00:37:06 - __main__ - INFO - PCA & LDA metadata saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\pca_metadata.json
+2026-07-12 00:37:06 - __main__ - INFO - Generating dimensionality reduction plots...
+2026-07-12 00:37:08 - __main__ - INFO - Figures successfully generated and saved under outputs/figures/.
+2026-07-12 00:41:10 - __main__ - INFO - --- Training on 'raw_scaled' representation ---
+2026-07-12 00:41:10 - __main__ - INFO - Fitting Logistic Regression with GridSearchCV...
+2026-07-12 00:41:20 - __main__ - INFO - LR raw_scaled Val F1: 0.9481 | AUC: 0.9994 | Best C: 10.0
+2026-07-12 00:41:20 - __main__ - INFO - Fitting MLPClassifier...
+2026-07-12 00:41:22 - __main__ - INFO - MLP raw_scaled Val F1: 0.9254 | AUC: 0.9963
+2026-07-12 00:41:22 - __main__ - INFO - --- Training on 'pca' representation ---
+2026-07-12 00:41:22 - __main__ - INFO - Fitting Logistic Regression with GridSearchCV...
+2026-07-12 00:41:22 - __main__ - INFO - LR pca Val F1: 0.9481 | AUC: 0.9995 | Best C: 10.0
+2026-07-12 00:41:22 - __main__ - INFO - Fitting MLPClassifier...
+2026-07-12 00:41:25 - __main__ - INFO - MLP pca Val F1: 0.9343 | AUC: 0.9975
+2026-07-12 00:41:25 - __main__ - INFO - --- Training on 'lda' representation ---
+2026-07-12 00:41:25 - __main__ - INFO - Fitting Logistic Regression with GridSearchCV...
+2026-07-12 00:41:26 - __main__ - INFO - LR lda Val F1: 0.9481 | AUC: 0.9992 | Best C: 10.0
+2026-07-12 00:41:26 - __main__ - INFO - Fitting MLPClassifier...
+2026-07-12 00:41:32 - __main__ - INFO - MLP lda Val F1: 0.9710 | AUC: 0.9993
+2026-07-12 00:41:32 - __main__ - INFO - ================================================================================
+2026-07-12 00:41:32 - __main__ - INFO - BEST MODEL SELECTED: MLP_Classifier_lda
+2026-07-12 00:41:32 - __main__ - INFO - Validation F1: 0.9710 | AUC: 0.9993
+2026-07-12 00:41:32 - __main__ - INFO - ================================================================================
+2026-07-12 00:41:32 - __main__ - INFO - Saved best classifier binary to: C:\Users\PMLS\Desktop\SmartRetail\models\best_classifier.joblib
+2026-07-12 00:41:32 - __main__ - INFO - FINAL TEST SET PERFORMANCE (Best Model):
+2026-07-12 00:41:32 - __main__ - INFO -   Accuracy:  1.0000
+2026-07-12 00:41:32 - __main__ - INFO -   Precision: 1.0000
+2026-07-12 00:41:32 - __main__ - INFO -   Recall:    1.0000
+2026-07-12 00:41:32 - __main__ - INFO -   F1-Score:  1.0000
+2026-07-12 00:41:32 - __main__ - INFO -   ROC-AUC:   1.0000
+2026-07-12 00:41:32 - __main__ - INFO - Metrics saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\classification_results.json
+2026-07-12 00:41:32 - __main__ - INFO - Predictions saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\classification_predictions.csv
+2026-07-12 00:41:32 - __main__ - INFO - Generating classification figures...
+2026-07-12 00:41:35 - __main__ - INFO - Classification figures successfully saved under outputs/figures/.
+2026-07-12 00:41:51 - __main__ - INFO - Fitting Linear Regression model...
+2026-07-12 00:41:51 - __main__ - INFO - Linear Regression Val R²: -0.0022 | RMSE: 9296.93
+2026-07-12 00:41:51 - __main__ - INFO - Fitting MLPRegressor model...
+2026-07-12 00:41:56 - __main__ - INFO - MLPRegressor Val R²: 0.0022 | RMSE: 9276.42
+2026-07-12 00:41:56 - __main__ - INFO - ================================================================================
+2026-07-12 00:41:56 - __main__ - INFO - BEST REGRESSOR SELECTED: MLPRegressor
+2026-07-12 00:41:56 - __main__ - INFO - Validation R²: 0.0022
+2026-07-12 00:41:56 - __main__ - INFO - ================================================================================
+2026-07-12 00:41:56 - __main__ - INFO - FINAL TEST SET PERFORMANCE (Best Model):
+2026-07-12 00:41:56 - __main__ - INFO -   MSE:  13307866.3789
+2026-07-12 00:41:56 - __main__ - INFO -   RMSE: 3647.9948
+2026-07-12 00:41:56 - __main__ - INFO -   R²:   0.6593
+2026-07-12 00:41:56 - __main__ - INFO - Metrics saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\regression_results.json
+2026-07-12 00:41:56 - __main__ - INFO - Predictions saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\regression_predictions.csv
+2026-07-12 00:41:56 - __main__ - INFO - Generating regression diagnostic figures...
+2026-07-12 00:41:57 - __main__ - INFO - Regression figures successfully saved under outputs/figures/.
+2026-07-12 00:43:49 - __main__ - INFO - --- Training on 'raw_scaled' representation ---
+2026-07-12 00:43:49 - __main__ - INFO - Fitting Logistic Regression with GridSearchCV...
+2026-07-12 00:44:04 - __main__ - INFO - LR raw_scaled Val F1: 0.9481 | AUC: 0.9994 | Best C: 10.0
+2026-07-12 00:44:04 - __main__ - INFO - Fitting MLPClassifier...
+2026-07-12 00:44:10 - __main__ - INFO - MLP raw_scaled Val F1: 0.9254 | AUC: 0.9963
+2026-07-12 00:44:10 - __main__ - INFO - --- Training on 'pca' representation ---
+2026-07-12 00:44:10 - __main__ - INFO - Fitting Logistic Regression with GridSearchCV...
+2026-07-12 00:44:11 - __main__ - INFO - LR pca Val F1: 0.9481 | AUC: 0.9995 | Best C: 10.0
+2026-07-12 00:44:11 - __main__ - INFO - Fitting MLPClassifier...
+2026-07-12 00:44:13 - __main__ - INFO - MLP pca Val F1: 0.9343 | AUC: 0.9975
+2026-07-12 00:44:13 - __main__ - INFO - --- Training on 'lda' representation ---
+2026-07-12 00:44:13 - __main__ - INFO - Fitting Logistic Regression with GridSearchCV...
+2026-07-12 00:44:14 - __main__ - INFO - LR lda Val F1: 0.9481 | AUC: 0.9992 | Best C: 10.0
+2026-07-12 00:44:14 - __main__ - INFO - Fitting MLPClassifier...
+2026-07-12 00:44:16 - __main__ - INFO - MLP lda Val F1: 0.9710 | AUC: 0.9993
+2026-07-12 00:44:16 - __main__ - INFO - ================================================================================
+2026-07-12 00:44:16 - __main__ - INFO - BEST MODEL SELECTED: MLP_Classifier_lda
+2026-07-12 00:44:16 - __main__ - INFO - Validation F1: 0.9710 | AUC: 0.9993
+2026-07-12 00:44:16 - __main__ - INFO - ================================================================================
+2026-07-12 00:44:16 - __main__ - INFO - Saved best classifier binary to: C:\Users\PMLS\Desktop\SmartRetail\models\best_classifier.joblib
+2026-07-12 00:44:16 - __main__ - INFO - FINAL TEST SET PERFORMANCE (Best Model):
+2026-07-12 00:44:16 - __main__ - INFO -   Accuracy:  1.0000
+2026-07-12 00:44:16 - __main__ - INFO -   Precision: 1.0000
+2026-07-12 00:44:16 - __main__ - INFO -   Recall:    1.0000
+2026-07-12 00:44:16 - __main__ - INFO -   F1-Score:  1.0000
+2026-07-12 00:44:16 - __main__ - INFO -   ROC-AUC:   1.0000
+2026-07-12 00:44:16 - __main__ - INFO - Metrics saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\classification_results.json
+2026-07-12 00:44:16 - __main__ - INFO - Predictions saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\classification_predictions.csv
+2026-07-12 00:44:16 - __main__ - INFO - Generating classification figures...
+2026-07-12 00:44:18 - __main__ - INFO - Classification figures successfully saved under outputs/figures/.
+2026-07-12 00:44:52 - __main__ - INFO - Fitting Linear Regression model...
+2026-07-12 00:44:52 - __main__ - INFO - Linear Regression Val R²: -0.0022 | RMSE: 9296.93
+2026-07-12 00:44:52 - __main__ - INFO - Fitting MLPRegressor model...
+2026-07-12 00:44:56 - __main__ - INFO - MLPRegressor Val R²: 0.0022 | RMSE: 9276.42
+2026-07-12 00:44:56 - __main__ - INFO - ================================================================================
+2026-07-12 00:44:56 - __main__ - INFO - BEST REGRESSOR SELECTED: MLPRegressor
+2026-07-12 00:44:56 - __main__ - INFO - Validation R²: 0.0022
+2026-07-12 00:44:56 - __main__ - INFO - ================================================================================
+2026-07-12 00:44:56 - __main__ - INFO - FINAL TEST SET PERFORMANCE (Best Model):
+2026-07-12 00:44:56 - __main__ - INFO -   MSE:  13307866.3789
+2026-07-12 00:44:56 - __main__ - INFO -   RMSE: 3647.9948
+2026-07-12 00:44:56 - __main__ - INFO -   R²:   0.6593
+2026-07-12 00:44:56 - __main__ - INFO - Metrics saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\regression_results.json
+2026-07-12 00:44:56 - __main__ - INFO - Predictions saved to: C:\Users\PMLS\Desktop\SmartRetail\data\processed\regression_predictions.csv
+2026-07-12 00:44:56 - __main__ - INFO - Generating regression diagnostic figures...
+2026-07-12 00:44:57 - __main__ - INFO - Regression figures successfully saved under outputs/figures/.
+2026-07-12 02:38:42 - __main__ - INFO - Initializing training environment...
+2026-07-12 02:38:43 - src.environment - INFO - RetailCustomerEnv initialized on 'train' split with 2649 customers.
+2026-07-12 02:38:43 - src.rl_agents - INFO - Fitting KMeans model with k=8...
+2026-07-12 02:38:50 - src.rl_agents - INFO - KMeans model successfully saved to: C:\Users\PMLS\Desktop\SmartRetail\models\kmeans.joblib
+2026-07-12 02:38:50 - __main__ - INFO - Initializing Tabular Q-learning agent...
+2026-07-12 02:38:50 - __main__ - INFO - Training Tabular Q-learning agent for 500 episodes...
+2026-07-12 02:38:54 - __main__ - INFO -   Episode   1/500 | Total Reward: 1184827.04 | Epsilon: 0.995
+2026-07-12 02:43:51 - __main__ - INFO -   Episode  50/500 | Total Reward: 1288374.46 | Epsilon: 0.778
+2026-07-12 02:47:39 - __main__ - INFO - Initializing training environment...
+2026-07-12 02:47:39 - src.environment - INFO - RetailCustomerEnv initialized on 'train' split with 2649 customers.
+2026-07-12 02:47:39 - src.rl_agents - INFO - Fitting KMeans model with k=8...
+2026-07-12 02:47:44 - src.rl_agents - INFO - KMeans model successfully saved to: C:\Users\PMLS\Desktop\SmartRetail\models\kmeans.joblib
+2026-07-12 02:47:44 - __main__ - INFO - Initializing Tabular Q-learning agent...
+2026-07-12 02:47:44 - __main__ - INFO - Training Tabular Q-learning agent for 500 episodes...
+2026-07-12 02:47:45 - __main__ - INFO -   Episode   1/500 | Total Reward: 1199965.26 | Epsilon: 0.995
+2026-07-12 02:48:51 - __main__ - INFO -   Episode  50/500 | Total Reward: 1345988.71 | Epsilon: 0.778
+2026-07-12 02:49:55 - __main__ - INFO -   Episode 100/500 | Total Reward: 1360688.23 | Epsilon: 0.606
+2026-07-12 02:51:17 - __main__ - INFO - Initializing training environment...
+2026-07-12 02:51:17 - src.environment - INFO - RetailCustomerEnv initialized on 'train' split with 2649 customers.
+2026-07-12 02:51:17 - src.rl_agents - INFO - Fitting KMeans model with k=8...
+2026-07-12 02:51:21 - src.rl_agents - INFO - KMeans model successfully saved to: C:\Users\PMLS\Desktop\SmartRetail\models\kmeans.joblib
+2026-07-12 02:51:21 - __main__ - INFO - Initializing Tabular Q-learning agent...
+2026-07-12 02:51:21 - __main__ - INFO - Training Tabular Q-learning agent for 500 episodes...
+2026-07-12 02:51:22 - __main__ - INFO -   Episode   1/500 | Total Reward: 1143516.11 | Epsilon: 0.995
+2026-07-12 02:51:58 - __main__ - INFO -   Episode  50/500 | Total Reward: 1338662.19 | Epsilon: 0.778
+2026-07-12 02:52:21 - __main__ - INFO -   Episode 100/500 | Total Reward: 1360431.14 | Epsilon: 0.606
+2026-07-12 02:52:33 - __main__ - INFO -   Episode 150/500 | Total Reward: 1382350.16 | Epsilon: 0.471
+2026-07-12 02:52:45 - __main__ - INFO -   Episode 200/500 | Total Reward: 1411446.89 | Epsilon: 0.367
+2026-07-12 02:53:09 - __main__ - INFO -   Episode 250/500 | Total Reward: 1400345.31 | Epsilon: 0.286
+2026-07-12 02:53:44 - __main__ - INFO -   Episode 300/500 | Total Reward: 1534396.37 | Epsilon: 0.222
+2026-07-12 02:54:21 - __main__ - INFO -   Episode 350/500 | Total Reward: 1515583.08 | Epsilon: 0.173
+2026-07-12 02:54:59 - __main__ - INFO -   Episode 400/500 | Total Reward: 1545261.03 | Epsilon: 0.135
+2026-07-12 02:55:34 - __main__ - INFO -   Episode 450/500 | Total Reward: 1472181.69 | Epsilon: 0.105
+2026-07-12 02:56:09 - __main__ - INFO -   Episode 500/500 | Total Reward: 1558386.88 | Epsilon: 0.082
+2026-07-12 02:56:09 - src.rl_agents - INFO - Q-table successfully saved to: C:\Users\PMLS\Desktop\SmartRetail\models\q_table.joblib
+2026-07-12 02:56:09 - __main__ - INFO - Initializing PyTorch DQN agent...
+2026-07-12 02:56:19 - __main__ - INFO - Training PyTorch DQN agent for 300 episodes...
+2026-07-12 02:56:28 - __main__ - INFO -   Episode   1/300 | Total Reward: 1240278.81 | Epsilon: 0.990
+2026-07-12 03:03:32 - __main__ - INFO -   Episode  50/300 | Total Reward: 1318135.02 | Epsilon: 0.605
+2026-07-12 03:10:42 - __main__ - INFO -   Episode 100/300 | Total Reward: 1422403.37 | Epsilon: 0.366
+2026-07-12 03:18:06 - __main__ - INFO -   Episode 150/300 | Total Reward: 1419018.72 | Epsilon: 0.221
+2026-07-12 03:25:45 - __main__ - INFO -   Episode 200/300 | Total Reward: 1434767.11 | Epsilon: 0.134

@@ -1,0 +1,44 @@
+{
+    "viva_explanation": "Other_Spend_Pct was intentionally excluded from PCA to avoid perfect multicollinearity. Because category spend percentages sum to 100%, including all six would make the feature matrix singular (determinant = 0), preventing valid mathematical transformation and scaling.",
+    "spend_features_selected_for_pca": [
+        "Homeware_Spend_Pct",
+        "Stationery_Spend_Pct",
+        "Gadgets_Spend_Pct",
+        "Decorations_Spend_Pct",
+        "Kitchenware_Spend_Pct"
+    ],
+    "spend_features_excluded_from_pca": [
+        "Other_Spend_Pct"
+    ],
+    "variance_explained_ratio": [
+        0.25864159776707063,
+        0.23150904578207818,
+        0.23055469424572025,
+        0.211900699175113,
+        0.0673939630300179
+    ],
+    "cumulative_variance_explained": [
+        0.25864159776707063,
+        0.49015064354914883,
+        0.7207053377948691,
+        0.9326060369699821,
+        1.0
+    ],
+    "min_variance_ratio_target": 0.9,
+    "selected_components_count": 4,
+    "lda_discriminant_coefficients": {
+        "ProductDiversity": 1.1470670390899638,
+        "AverageSpend": 0.8779922276392654,
+        "Recency": -0.7460372180695759,
+        "AverageQuantityPerOrder": 0.5863303307216564,
+        "Frequency": 0.5588709303652603,
+        "TotalOrders": 0.5588709303652597,
+        "Monetary": -0.41831294526944307,
+        "AverageBasketSize": -0.2811510517331179,
+        "Stationery_Spend_Pct": -0.2070699628223914,
+        "Decorations_Spend_Pct": -0.15999237820549542,
+        "Gadgets_Spend_Pct": -0.1198889067500708,
+        "Homeware_Spend_Pct": -0.014173537314451454,
+        "Kitchenware_Spend_Pct": -0.004820365962308766
+    }
+}
