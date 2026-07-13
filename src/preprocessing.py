@@ -22,33 +22,11 @@ logger = get_logger(__name__)
 
 # Fixed Category Keyword Mapping (per university specification)
 CATEGORY_KEYWORDS = {
-    "Homeware": [
-        "cushion", "pillow", "mat", "rug", "towel", "blanket", "mirror", "clock", 
-        "furniture", "chair", "table", "lamp", "shade", "curtain", "homeware", 
-        "doormat", "frame", "canvas", "wall", "bed", "basket"
-    ],
-    "Stationery": [
-        "pen", "pencil", "notebook", "journal", "pad", "paper", "envelope", 
-        "card", "wrap", "ribbon", "sticker", "label", "post", "calendar", 
-        "eraser", "ruler", "scissors", "tape", "glue", "book"
-    ],
-    "Gadgets": [
-        "gadget", "phone", "charger", "cable", "usb", "battery", "light", 
-        "torch", "alarm", "calculator", "device", "electronic", "plug", 
-        "fan", "headphones"
-    ],
-    "Decorations": [
-        "decoration", "ornament", "garland", "wreath", "balloon", "banner", 
-        "candle", "holder", "lantern", "t-light", "christmas", "easter", 
-        "halloween", "party", "festive", "flower", "vase", "heart", "star", 
-        "sign", "plaque", "bauble", "tree", "gift", "baubles", "decorations"
-    ],
-    "Kitchenware": [
-        "kitchen", "bowl", "plate", "cup", "mug", "glass", "fork", "spoon", 
-        "knife", "cutlery", "dish", "pan", "pot", "tray", "teapot", "kettle", 
-        "bottle", "jar", "container", "jug", "coaster", "shaker", "timer", 
-        "baking", "cutter", "apron", "oven", "glove"
-    ]
+    "Homeware": ["home", "mug", "candle", "lantern", "cushion"],
+    "Stationery": ["card", "notebook", "pen", "paper", "envelope"],
+    "Gadgets": ["light", "clock", "battery", "alarm"],
+    "Decorations": ["christmas", "decoration", "bunting", "garland"],
+    "Kitchenware": ["baking", "cake", "tin", "jar", "bowl"]
 }
 
 def classify_description(description: Any) -> str:
