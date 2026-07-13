@@ -1,0 +1,25 @@
+# Virtual Environment (YOUR INSTALLED PACKAGES)
+.venv/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Logs
+logs/
+*.log
+
+# Outputs (generated files)
+outputs/
+models/*.pkl
+models/*.h5
+data/*.csv
+data/*.xlsx
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

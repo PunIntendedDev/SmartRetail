@@ -157,6 +157,104 @@ def train_reinforcement_learning() -> None:
     
     logger.info(f"Learning curve successfully saved to: {curve_path}")
     logger.info("Reinforcement Learning training pipeline completed successfully.")
+    
+    # Run test set evaluation
+    evaluate_policies_on_test()
+
+def evaluate_policies_on_test() -> None:
+    """
+    Evaluates the trained Tabular Q-learning policy, the DQN policy,
+    the always-No-Action baseline, and the random-action baseline on held-out test customers.
+    Saves the comparative metrics to a JSON file and a bar chart.
+    """
+    import json
+    logger.info("Starting RL Policy evaluation on held-out test split...")
+    env_test = RetailCustomerEnv(split="test")
+    
+    # 1. Load trained agents & discretizer
+    q_agent = QLearningAgent(state_size=8, action_size=3)
+    q_agent.load()
+    
+    discretizer = StateDiscretizer(n_clusters=8)
+    discretizer.load()
+    
+    dqn_agent = DQNAgent(state_size=5, action_size=3)
+    dqn_agent.load()
+    
+    # 2. Evaluate DQN Policy
+    env_test.reset()
+    dqn_total_profit = 0.0
+    for idx in range(env_test.num_customers):
+        state = env_test.states[idx]
+        action = dqn_agent.get_action(state, train=False)
+        _, reward, _, _ = env_test.step(action)
+        dqn_total_profit += reward
+        
+    # 3. Evaluate Tabular Q Policy
+    env_test.reset()
+    q_total_profit = 0.0
+    for idx in range(env_test.num_customers):
+        state = env_test.states[idx]
+        state_idx = discretizer.discretize(state)
+        action = q_agent.get_action(state_idx, train=False)
+        _, reward, _, _ = env_test.step(action)
+        q_total_profit += reward
+        
+    # 4. Evaluate Always No-Action
+    env_test.reset()
+    no_action_total_profit = 0.0
+    for idx in range(env_test.num_customers):
+        _, reward, _, _ = env_test.step(0)
+        no_action_total_profit += reward
+        
+    # 5. Evaluate Random-Action
+    env_test.reset()
+    np.random.seed(42)
+    random_total_profit = 0.0
+    for idx in range(env_test.num_customers):
+        action = np.random.choice([0, 1, 2])
+        _, reward, _, _ = env_test.step(action)
+        random_total_profit += reward
+
+    logger.info(f"DQN Profit: ${dqn_total_profit:,.2f}")
+    logger.info(f"Tabular Q Profit: ${q_total_profit:,.2f}")
+    logger.info(f"Always No-Action Profit: ${no_action_total_profit:,.2f}")
+    logger.info(f"Random Action Profit: ${random_total_profit:,.2f}")
+    
+    # Save comparative metrics to JSON
+    results = {
+        "DQN_Policy": dqn_total_profit,
+        "Tabular_Q_Policy": q_total_profit,
+        "Always_No_Action": no_action_total_profit,
+        "Random_Action": random_total_profit
+    }
+    
+    processed_dir = get_absolute_path("processed_data_dir")
+    eval_json_path = os.path.join(processed_dir, "rl_evaluation_results.json")
+    with open(eval_json_path, "w") as f:
+        json.dump(results, f, indent=4)
+    logger.info(f"RL policy comparison metrics saved to: {eval_json_path}")
+    
+    # Save the comparative bar chart
+    figures_dir = get_absolute_path("figures_dir")
+    plt.figure(figsize=(8, 5))
+    policies = ["Always No-Action", "Random Action", "Tabular Q-Learning", "DQN Recommendation"]
+    profits = [no_action_total_profit, random_total_profit, q_total_profit, dqn_total_profit]
+    colors = ["#ef4444", "#f59e0b", "#10b981", "#2563eb"]
+    
+    plt.bar(policies, profits, color=colors, edgecolor="black", alpha=0.85)
+    plt.ylabel("Total Profit ($)")
+    plt.title("RL Policy Profit Comparison on Test Customers")
+    plt.grid(axis="y", linestyle="--", alpha=0.5)
+    
+    # Formatting values on top of bars
+    for i, v in enumerate(profits):
+        plt.text(i, v + (max(profits)*0.01), f"${v:,.0f}", ha='center', fontweight='bold')
+        
+    bar_path = os.path.join(figures_dir, "rl_profit_comparison.png")
+    plt.savefig(bar_path, dpi=300, bbox_inches="tight")
+    plt.close()
+    logger.info(f"RL comparison bar chart saved to: {bar_path}")
 
 if __name__ == "__main__":
     train_reinforcement_learning()

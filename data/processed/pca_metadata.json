@@ -11,34 +11,34 @@
         "Other_Spend_Pct"
     ],
     "variance_explained_ratio": [
-        0.25864159776707063,
-        0.23150904578207818,
-        0.23055469424572025,
-        0.211900699175113,
-        0.0673939630300179
+        0.24298977930196122,
+        0.23294251747160574,
+        0.19850335053014798,
+        0.19123383292006238,
+        0.13433051977622262
     ],
     "cumulative_variance_explained": [
-        0.25864159776707063,
-        0.49015064354914883,
-        0.7207053377948691,
-        0.9326060369699821,
+        0.24298977930196122,
+        0.47593229677356697,
+        0.674435647303715,
+        0.8656694802237773,
         1.0
     ],
     "min_variance_ratio_target": 0.9,
-    "selected_components_count": 4,
+    "selected_components_count": 5,
     "lda_discriminant_coefficients": {
-        "ProductDiversity": 1.1470670390899638,
-        "AverageSpend": 0.8779922276392654,
-        "Recency": -0.7460372180695759,
-        "AverageQuantityPerOrder": 0.5863303307216564,
-        "Frequency": 0.5588709303652603,
-        "TotalOrders": 0.5588709303652597,
-        "Monetary": -0.41831294526944307,
-        "AverageBasketSize": -0.2811510517331179,
-        "Stationery_Spend_Pct": -0.2070699628223914,
-        "Decorations_Spend_Pct": -0.15999237820549542,
-        "Gadgets_Spend_Pct": -0.1198889067500708,
-        "Homeware_Spend_Pct": -0.014173537314451454,
-        "Kitchenware_Spend_Pct": -0.004820365962308766
+        "ProductDiversity": 1.1422389487604465,
+        "AverageSpend": 0.8845030943829769,
+        "Recency": -0.7451975484784449,
+        "AverageQuantityPerOrder": 0.5820217891710944,
+        "Frequency": 0.5622771732049715,
+        "TotalOrders": 0.5622771732049715,
+        "Monetary": -0.4151021585640722,
+        "AverageBasketSize": -0.2839584473105491,
+        "Stationery_Spend_Pct": -0.2018133380647796,
+        "Homeware_Spend_Pct": -0.0864887421490354,
+        "Kitchenware_Spend_Pct": -0.03559469453756884,
+        "Decorations_Spend_Pct": -0.03177737314393411,
+        "Gadgets_Spend_Pct": -0.02285962617645051
     }
 }

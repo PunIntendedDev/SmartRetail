@@ -12,16 +12,16 @@
             "val_precision": 1.0,
             "val_recall": 0.9014084507042254,
             "val_f1": 0.9481481481481482,
-            "val_auc": 0.9994041170097507
+            "val_auc": 0.9985915492957746
         },
         "MLP_Classifier_raw_scaled": {
             "model_type": "MLP_Classifier",
             "representation": "raw_scaled",
-            "val_accuracy": 0.9697885196374623,
-            "val_precision": 0.9841269841269841,
-            "val_recall": 0.8732394366197183,
-            "val_f1": 0.9253731343283582,
-            "val_auc": 0.9963163596966415
+            "val_accuracy": 0.9667673716012085,
+            "val_precision": 0.9545454545454546,
+            "val_recall": 0.8873239436619719,
+            "val_f1": 0.9197080291970803,
+            "val_auc": 0.9973456121343445
         },
         "Logistic_Regression_pca": {
             "model_type": "Logistic_Regression",
@@ -35,16 +35,16 @@
             "val_precision": 1.0,
             "val_recall": 0.9014084507042254,
             "val_f1": 0.9481481481481482,
-            "val_auc": 0.9994582881906826
+            "val_auc": 0.9985915492957746
         },
         "MLP_Classifier_pca": {
             "model_type": "MLP_Classifier",
             "representation": "pca",
-            "val_accuracy": 0.972809667673716,
-            "val_precision": 0.9696969696969697,
-            "val_recall": 0.9014084507042254,
-            "val_f1": 0.9343065693430657,
-            "val_auc": 0.9975081256771398
+            "val_accuracy": 0.9848942598187311,
+            "val_precision": 0.9852941176470589,
+            "val_recall": 0.9436619718309859,
+            "val_f1": 0.9640287769784173,
+            "val_auc": 0.9980498374864573
         },
         "Logistic_Regression_lda": {
             "model_type": "Logistic_Regression",
@@ -58,16 +58,16 @@
             "val_precision": 1.0,
             "val_recall": 0.9014084507042254,
             "val_f1": 0.9481481481481482,
-            "val_auc": 0.9991874322860238
+            "val_auc": 0.9994041170097508
         },
         "MLP_Classifier_lda": {
             "model_type": "MLP_Classifier",
             "representation": "lda",
-            "val_accuracy": 0.9879154078549849,
+            "val_accuracy": 0.9909365558912386,
             "val_precision": 1.0,
-            "val_recall": 0.9436619718309859,
-            "val_f1": 0.9710144927536232,
-            "val_auc": 0.9992957746478873
+            "val_recall": 0.9577464788732394,
+            "val_f1": 0.9784172661870504,
+            "val_auc": 0.9992416034669556
         }
     },
     "best_model_selected": "MLP_Classifier_lda",
