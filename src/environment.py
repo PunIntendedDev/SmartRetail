@@ -2,7 +2,7 @@
 Reinforcement Learning Environment Module
 ------------------------------------------
 Implements the RetailCustomerEnv class representing the customer recommendation
-environment. States are defined as [Recency, Frequency, Monetary, PC1, PC2].
+environment. States are defined as [Recency, Frequency, AverageSpend, PC1, PC2].
 Rewards are calculated using predicted future spend from best_regressor.joblib,
 action multipliers, and action costs.
 """
@@ -26,7 +26,7 @@ class RetailCustomerEnv:
     """
     Simulates recommendations for retail customers.
     One episode iterates through all customers in the split exactly once.
-    State representation: [Recency, Frequency, Monetary, PC1, PC2].
+    State representation: [Recency, Frequency, AverageSpend, PC1, PC2].
     """
     def __init__(self, split: str = "train"):
         """
@@ -45,7 +45,7 @@ class RetailCustomerEnv:
             raise FileNotFoundError(f"Best regressor model not found at: {regressor_path}")
         self.regressor = joblib.load(regressor_path)
         
-        # Load PCA feature splits (holds the 5D state columns: Recency, Frequency, Monetary, PC1, PC2)
+        # Load PCA feature splits (holds the 5D state columns: Recency, Frequency, AverageSpend, PC1, PC2)
         pca_filepath = os.path.join(processed_dir, f"{split}_pca.csv")
         if not os.path.exists(pca_filepath):
             raise FileNotFoundError(f"PCA-transformed feature splits not found at: {pca_filepath}")
@@ -69,7 +69,7 @@ class RetailCustomerEnv:
         self.num_customers = len(self.customer_ids)
         
         # Define 5D state variables
-        state_cols = ["Recency", "Frequency", "Monetary", "PC1", "PC2"]
+        state_cols = ["Recency", "Frequency", "AverageSpend", "PC1", "PC2"]
         self.states = self.pca_df[state_cols].values
         
         # Define 13D regressor input variables

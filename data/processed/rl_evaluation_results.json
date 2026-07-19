@@ -1,6 +1,6 @@
 {
-    "DQN_Policy": 252289.8563238449,
-    "Tabular_Q_Policy": 248498.1040259023,
-    "Always_No_Action": 102345.71852642369,
-    "Random_Action": 177037.78183174203
+    "DQN_Policy": 421789.8035016422,
+    "Tabular_Q_Policy": 409895.16525181755,
+    "Always_No_Action": 172224.69948082062,
+    "Random_Action": 368637.5478451676
 }

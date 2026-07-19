@@ -27,18 +27,17 @@
     "min_variance_ratio_target": 0.9,
     "selected_components_count": 5,
     "lda_discriminant_coefficients": {
-        "ProductDiversity": 1.1422389487604465,
-        "AverageSpend": 0.8845030943829769,
-        "Recency": -0.7451975484784449,
-        "AverageQuantityPerOrder": 0.5820217891710944,
-        "Frequency": 0.5622771732049715,
-        "TotalOrders": 0.5622771732049715,
-        "Monetary": -0.4151021585640722,
-        "AverageBasketSize": -0.2839584473105491,
-        "Stationery_Spend_Pct": -0.2018133380647796,
-        "Homeware_Spend_Pct": -0.0864887421490354,
-        "Kitchenware_Spend_Pct": -0.03559469453756884,
-        "Decorations_Spend_Pct": -0.03177737314393411,
-        "Gadgets_Spend_Pct": -0.02285962617645051
+        "ProductDiversity": 1.0952301165039016,
+        "Recency": -0.7551361098328586,
+        "AverageSpend": 0.7218582176181483,
+        "AverageQuantityPerOrder": 0.5294426344874346,
+        "TotalOrders": 0.4624864990697678,
+        "Frequency": 0.46248649906976724,
+        "AverageBasketSize": -0.21956650584275578,
+        "Stationery_Spend_Pct": -0.19531937345321965,
+        "Homeware_Spend_Pct": -0.08800562013457747,
+        "Kitchenware_Spend_Pct": -0.03534194940027892,
+        "Decorations_Spend_Pct": -0.02927619625557365,
+        "Gadgets_Spend_Pct": -0.0177020326006548
     }
 }

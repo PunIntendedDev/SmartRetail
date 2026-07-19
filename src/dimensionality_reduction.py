@@ -60,10 +60,15 @@ def perform_dimensionality_reduction() -> None:
     logger.info(f"Selected category spend features for PCA (excluding 'Other_Spend_Pct'): {spend_features}")
     
     # Non-spend baseline features
+    # NOTE: 'Monetary' is intentionally excluded here. High_Value_Customer is defined
+    # as a direct threshold on Monetary (see preprocessing.py), so including it as a
+    # model input causes label leakage — the model would trivially re-derive the
+    # threshold rule instead of learning behavioral patterns. It is retained in the
+    # original train/val/test.csv files for display purposes, just not fed into the
+    # scaler/PCA/LDA fitting used for classification/regression features.
     non_spend_features = [
         "Recency", 
         "Frequency", 
-        "Monetary", 
         "AverageSpend", 
         "ProductDiversity", 
         "TotalOrders", 
