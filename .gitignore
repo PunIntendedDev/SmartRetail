@@ -11,10 +11,6 @@ logs/
 
 # Outputs (generated files)
 outputs/
-models/*.pkl
-models/*.h5
-data/*.csv
-data/*.xlsx
 
 # IDE
 .vscode/
