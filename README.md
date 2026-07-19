@@ -5,6 +5,14 @@
 
 ---
 
+## 🚀 Live Demo
+
+**[View the Live App](https://smartretail.streamlit.app)**
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smartretail.streamlit.app)
+
+---
+
 ## Table of Contents
 1. [Project Overview](#1-project-overview)
 2. [Architecture](#2-architecture)
@@ -15,6 +23,7 @@
 7. [Streamlit Dashboard](#7-streamlit-dashboard)
 8. [Configuration](#8-configuration)
 9. [Outputs](#9-outputs)
+10. [Team](#10-team)
 
 ---
 
@@ -80,6 +89,8 @@ SmartRetail/
 ├── app.py                          # Streamlit dashboard entry point
 ├── requirements.txt                # Python dependencies
 ├── category_map.json               # Reproducible CustomerID → category mapping
+├── .streamlit/
+│   └── config.toml                 # Streamlit theme configuration
 ├── config/
 │   └── config.yaml                 # All hyperparameters and paths
 ├── data/
@@ -128,20 +139,22 @@ SmartRetail/
 - ~2 GB free disk space (for virtual environment + dataset)
 
 ### Step 1 — Clone and Enter the Repository
-```powershell
-git clone <repo-url>
+```bash
+git clone https://github.com/PunIntendedDev/SmartRetail.git
 cd SmartRetail
 ```
 
 ### Step 2 — Create a Virtual Environment
-```powershell
+```bash
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1   # Windows PowerShell
-# source .venv/bin/activate    # macOS / Linux
+# Windows
+.\.venv\Scripts\Activate.ps1
+# macOS / Linux
+source .venv/bin/activate
 ```
 
 ### Step 3 — Install Dependencies
-```powershell
+```bash
 pip install -r requirements.txt
 ```
 
@@ -154,36 +167,36 @@ pip install -r requirements.txt
 All commands must be run from the `SmartRetail/` root directory with the virtual environment active.
 
 ### Step 1 — Download Raw Data
-```powershell
+```bash
 python -m src.download_data
 ```
 
 ### Step 2 — Preprocess & Generate Splits
-```powershell
+```bash
 python -m src.preprocessing
 ```
 *Outputs:* `data/processed/train.csv`, `validation.csv`, `test.csv`, `category_map.json`
 
 ### Step 3 — Dimensionality Reduction
-```powershell
+```bash
 python -m src.dimensionality_reduction
 ```
 *Outputs:* `models/scaler.joblib`, `pca.joblib`, `lda.joblib`
 
 ### Step 4 — Train Classifiers
-```powershell
+```bash
 python -m src.classification
 ```
 *Outputs:* `models/logistic_regression.joblib`, `mlp_classifier.joblib`
 
 ### Step 5 — Train Regressors
-```powershell
+```bash
 python -m src.regression
 ```
 *Outputs:* `models/linear_regression.joblib`, `mlp_regressor.joblib`
 
 ### Step 6 — Train RL Agents + Evaluate Baselines
-```powershell
+```bash
 python -m src.train_rl
 ```
 *Outputs:* `models/q_table.npy`, `dqn_model.pt`, `kmeans.joblib`,  
@@ -206,7 +219,7 @@ Notebooks are located in the `notebooks/` directory and mirror the five pipeline
 
 ### Running Notebooks
 
-```powershell
+```bash
 pip install jupyter
 jupyter notebook
 ```
@@ -219,7 +232,7 @@ Then navigate to the `notebooks/` folder in the Jupyter interface.
 
 ## 7. Streamlit Dashboard
 
-```powershell
+```bash
 streamlit run app.py
 ```
 
@@ -227,13 +240,22 @@ The dashboard will open at **http://localhost:8501** and includes:
 
 | Section | Features |
 |---|---|
-| **Sidebar** | Global Customer ID dropdown (from test split) |
-| **Category Mix** | Plotly pie chart of the selected customer's purchase categories |
-| **PCA Projection** | PC1 vs PC2 scatter with selected customer highlighted |
-| **LDA Projection** | LD1 distribution with customer position marked |
-| **Segment & Spend** | Predicted segment (Logistic / MLP) + predicted future spend with RMSE margin |
-| **RL Recommendations** | Tabular Q and DQN Q-value bars + recommended action per model |
-| **Policy Comparison** | Cumulative profit bar chart (DQN vs Q vs No-Action vs Random) |
+| **Sidebar** | Global Customer ID dropdown (from test split) with active customer card |
+| **Overview** | Total profiles, feature space, best classifier/regressor, cumulative profit chart |
+| **Customer Intelligence** | Category mix, segment prediction, spend forecast, RL Q-values with recommendations |
+| **PCA/LDA Projections** | Toggle between PCA scatter and LDA histogram with customer highlighting |
+| **Model Performance** | Classification and regression benchmarks, confusion matrix, ROC curves, residual plots |
+| **Dataset Explorer** | Interactive preview and feature distribution visualizer |
+| **About** | Implementation pipeline, technology stack, data leakage prevention |
+
+### HCI Principles Applied
+
+- **Match between system & real world**: Plain-language labels with currency/units on every metric
+- **Visibility of system status**: Live artifact-readiness indicators always visible
+- **Recognition over recall**: Active customer pinned in sidebar across all views
+- **Consistency & standards**: Unified light design-token system
+- **Aesthetic & minimalist design**: Generous whitespace, restrained color palette, real icons
+- **Error prevention & recovery**: Instructive empty states instead of raw tracebacks
 
 ---
 
@@ -283,6 +305,29 @@ reinforcement_learning:
 | `outputs/figures/regression_*.png` | Predicted vs. actual scatter plots |
 | `data/processed/rl_evaluation_results.json` | JSON of cumulative profits per policy |
 | `category_map.json` | Reproducible CustomerID → category mapping |
+
+---
+
+## 10. Team
+
+- **Project Type**: Semester-Final ML Product + Dashboard
+- **Role**: ML Engineer & UI Developer
+- **Mode**: Fully offline inference using serialized binaries
+- **Dataset**: [UCI Online Retail Dataset](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
+
+---
+
+## 🚀 Deployment
+
+This app is deployed on [Streamlit Community Cloud](https://streamlit.io/cloud).
+
+**Live URL**: [https://smartretail.streamlit.app](https://smartretail.streamlit.app)
+
+---
+
+## 📝 License
+
+MIT
 
 ---
 
