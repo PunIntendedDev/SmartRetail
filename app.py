@@ -1432,8 +1432,9 @@ with tab_about:
             panel_title("Developer Notes", "info")
             st.markdown(
                 """
-- **Project Type**: Final-Year ML Product + Dashboard
+- **Project Type**: Semester-Final ML Product + Dashboard
 - **Role**: ML Engineer & UI Developer
 - **Mode**: Fully offline inference using serialized binaries
+- **Dataset**: 🔗 [UCI Online Retail Dataset](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
                 """
             )
