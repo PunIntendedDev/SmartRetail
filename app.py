@@ -1434,7 +1434,7 @@ with tab_about:
                 """
 - **Project Type**: Semester-Final ML Product + Dashboard
 - **Role**: ML Engineer & UI Developer
-- **Mode**: Fully offline inference using serialized binaries
-- **Dataset**: 🔗 [UCI Online Retail Dataset](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
+- **GitHub**: https://github.com/PunIntendedDev/SmartRetail.git
+- **Dataset**: https://archive.ics.uci.edu/dataset/502/online+retail+ii
                 """
             )
