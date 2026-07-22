@@ -628,6 +628,28 @@ st.markdown(
         margin: 0 !important;
     }}
 
+        /* Fix for long URLs on mobile - wrap text */
+    .stMarkdown a {{
+        word-break: break-all !important;
+        overflow-wrap: break-word !important;
+        max-width: 100% !important;
+        display: inline-block !important;
+    }}
+    
+    @media (max-width: 768px) {{
+        .stMarkdown a {{
+            word-break: break-all !important;
+            overflow-wrap: break-word !important;
+            max-width: 100% !important;
+            display: inline-block !important;
+        }}
+        
+        div[data-testid="stVerticalBlockBorderWrapper"] > div:first-child {{
+            padding: 12px !important;
+            overflow: hidden !important;
+        }}
+    }}
+
     </style>
     """,
     unsafe_allow_html=True,
