@@ -223,7 +223,63 @@ st.markdown(
 
     #MainMenu, footer {{ visibility: hidden; }}
     .stAppDeployButton {{ display: none; }}
-    header[data-testid="stHeader"] {{ display:none !important; }}
+    
+    /* Hide header ONLY on desktop to allow the hamburger menu on mobile */
+    @media (min-width: 768px) {{
+        header[data-testid="stHeader"] {{ display:none !important; }}
+    }}
+
+    /* On mobile, collapse the native header bar itself (so it takes no visual
+       space at the top and never overlaps the sticky tab bar), but pull the
+       sidebar-toggle button out of it and float it as a round button pinned
+       to the bottom-left of the screen instead. */
+    @media (max-width: 767px) {{
+        /* Neutralize any transformed ancestor Streamlit may use for page-load
+           / transition animations — a transform on an ancestor would make our
+           fixed-position button anchor to THAT box instead of the real screen,
+           which is why it can appear stuck at the top instead of floating. */
+        [data-testid="stAppViewContainer"],
+        [data-testid="stApp"],
+        [data-testid="stMain"],
+        [data-testid="stToolbar"],
+        .stApp,
+        section.main {{
+            transform: none !important;
+        }}
+
+        header[data-testid="stHeader"] {{
+            position: static !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            height: 0 !important;
+            min-height: 0 !important;
+            overflow: visible !important;
+            transform: none !important;
+        }}
+        [data-testid="stExpandSidebarButton"] {{
+            position: fixed !important;
+            top: auto !important;
+            bottom: 20px !important;
+            left: 20px !important;
+            right: auto !important;
+            inset: auto auto 20px 20px !important;
+            transform: none !important;
+            z-index: 999999 !important;
+            width: 46px !important;
+            height: 46px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            background: var(--primary) !important;
+            border-radius: 999px !important;
+            box-shadow: 0 8px 20px rgba(37,99,235,.35) !important;
+        }}
+        [data-testid="stExpandSidebarButton"] span,
+        [data-testid="stExpandSidebarButton"] svg {{
+            color: #fff !important;
+            fill: #fff !important;
+        }}
+    }}
     
     section[data-testid="stSidebar"] > div:first-child {{ padding-top: 0.2rem !important; overflow: hidden !important; }}
     section[data-testid="stSidebar"] .block-container {{ padding-top: 0.2rem !important; padding-bottom: 0.2rem !important; }}
@@ -235,15 +291,20 @@ st.markdown(
     section[data-testid="stSidebar"] {{
         background: var(--surface) !important;
         border-right: 1px solid var(--border) !important;
-        min-width: 300px !important; max-width: 300px !important; width: 300px !important;
-        transform: none !important; visibility: visible !important;
     }}
     section[data-testid="stSidebar"] > div {{ padding: 1.2rem 1.1rem; }}
     
-    [data-testid="stSidebarCollapseButton"],
-    [data-testid="stSidebarCollapsedControl"],
-    [data-testid="collapsedControl"],
-    [data-testid="stSidebarResizeHandle"] {{ display:none !important; }}
+    /* Lock sidebar open and hide collapse controls ONLY on desktop */
+    @media (min-width: 768px) {{
+        section[data-testid="stSidebar"] {{
+            min-width: 300px !important; max-width: 300px !important; width: 300px !important;
+            transform: none !important; visibility: visible !important;
+        }}
+        [data-testid="stSidebarCollapseButton"],
+        [data-testid="stSidebarCollapsedControl"],
+        [data-testid="collapsedControl"],
+        [data-testid="stSidebarResizeHandle"] {{ display:none !important; }}
+    }}
 
     .brand {{ display:flex; align-items:center; gap:12px; padding:16px 0 16px 0;
         margin-bottom:6px; border-bottom:1px solid var(--border); }}
